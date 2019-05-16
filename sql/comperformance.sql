@@ -29,7 +29,7 @@ CREATE TABLE `assessment` (
   `enddate` date NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `assessment_term_2d24275f2f1163b1_uniq` (`term`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of assessment
@@ -53,7 +53,7 @@ CREATE TABLE `assessmentrecord` (
   CONSTRAINT `assessment_id_refs_id_481497ac315d3be` FOREIGN KEY (`assessment_id`) REFERENCES `assessment` (`id`),
   CONSTRAINT `dstudent_id_refs_id_3e3af109a366ce10` FOREIGN KEY (`dstudent_id`) REFERENCES `student` (`id`),
   CONSTRAINT `ostudent_id_refs_id_3e3af109a366ce10` FOREIGN KEY (`ostudent_id`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2707 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2707 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of assessmentrecord
@@ -95,7 +95,7 @@ CREATE TABLE `assessmentrow` (
   KEY `assessmentrow_42ff452e` (`student_id`),
   CONSTRAINT `assessment_id_refs_id_678d39fc296003b8` FOREIGN KEY (`assessment_id`) REFERENCES `assessment` (`id`),
   CONSTRAINT `student_id_refs_id_6c5fd85230c6a2fa` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of assessmentrow
@@ -116,7 +116,7 @@ CREATE TABLE `auth_group` (
   `name` varchar(80) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of auth_group
@@ -136,7 +136,7 @@ CREATE TABLE `auth_group_permissions` (
   KEY `auth_group_permissions_1e014c8f` (`permission_id`),
   CONSTRAINT `group_id_refs_id_3cea63fe` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `permission_id_refs_id_a7792de1` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of auth_group_permissions
@@ -153,7 +153,7 @@ CREATE TABLE `auth_message` (
   PRIMARY KEY (`id`),
   KEY `auth_message_fbfc09f1` (`user_id`),
   CONSTRAINT `user_id_refs_id_9af0b65a` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of auth_message
@@ -172,7 +172,7 @@ CREATE TABLE `auth_permission` (
   UNIQUE KEY `content_type_id` (`content_type_id`,`codename`),
   KEY `auth_permission_e4470c6e` (`content_type_id`),
   CONSTRAINT `content_type_id_refs_id_728de91f` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of auth_permission
@@ -265,7 +265,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of auth_user
@@ -292,7 +292,7 @@ CREATE TABLE `auth_user_groups` (
   KEY `auth_user_groups_bda51c3c` (`group_id`),
   CONSTRAINT `group_id_refs_id_f0ee9890` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `user_id_refs_id_831107f1` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of auth_user_groups
@@ -312,7 +312,7 @@ CREATE TABLE `auth_user_user_permissions` (
   KEY `auth_user_user_permissions_1e014c8f` (`permission_id`),
   CONSTRAINT `permission_id_refs_id_67e79cb` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `user_id_refs_id_f2045483` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of auth_user_user_permissions
@@ -327,7 +327,7 @@ CREATE TABLE `behavior` (
   `actlevel` varchar(1) NOT NULL,
   `name` varchar(16) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of behavior
@@ -348,7 +348,7 @@ CREATE TABLE `captcha_captchastore` (
   `expiration` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `hashkey` (`hashkey`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of captcha_captchastore
@@ -366,7 +366,7 @@ CREATE TABLE `class` (
   `classname` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `class_classid_4a2e781305b0d34e_uniq` (`classid`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of class
@@ -391,7 +391,7 @@ CREATE TABLE `comperformance` (
   `term` varchar(16) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `comperformance_term_98541db216b86d0_uniq` (`term`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of comperformance
@@ -415,7 +415,7 @@ CREATE TABLE `comperformancebehaviorscore` (
   CONSTRAINT `behavior_id_refs_id_77382c078dcf59a5` FOREIGN KEY (`behavior_id`) REFERENCES `behavior` (`id`),
   CONSTRAINT `comperformance_id_refs_id_9db7e2145d39566` FOREIGN KEY (`comperformance_id`) REFERENCES `comperformance` (`id`),
   CONSTRAINT `student_id_refs_id_550d503b0393d3c5` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of comperformancebehaviorscore
@@ -440,7 +440,7 @@ CREATE TABLE `comperformancedevelopmentscore` (
   CONSTRAINT `comperformance_id_refs_id_3cde1d1e3bb5ec66` FOREIGN KEY (`comperformance_id`) REFERENCES `comperformance` (`id`),
   CONSTRAINT `development_id_refs_id_5a19d8e2dcf4b593` FOREIGN KEY (`development_id`) REFERENCES `development` (`id`),
   CONSTRAINT `student_id_refs_id_10b9c16c636bae29` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of comperformancedevelopmentscore
@@ -461,7 +461,7 @@ CREATE TABLE `comperformancephysicalscore` (
   KEY `comperformancephysicalscore_28fbb1e5` (`comperformance_id`),
   CONSTRAINT `comperformance_id_refs_id_47d583b7ad9a3037` FOREIGN KEY (`comperformance_id`) REFERENCES `comperformance` (`id`),
   CONSTRAINT `student_id_refs_id_2e6f0bea3f56cbd8` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of comperformancephysicalscore
@@ -483,7 +483,7 @@ CREATE TABLE `comperformancescore` (
   KEY `comperformancescore_28fbb1e5` (`comperformance_id`),
   CONSTRAINT `comperformance_id_refs_id_5c562630e95b581c` FOREIGN KEY (`comperformance_id`) REFERENCES `comperformance` (`id`),
   CONSTRAINT `student_id_refs_id_c1fcc1a5d7f512d` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of comperformancescore
@@ -504,7 +504,7 @@ CREATE TABLE `development` (
   `parent` varchar(1) NOT NULL DEFAULT '1',
   `name` varchar(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of development
@@ -530,7 +530,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_e4470c6e` (`content_type_id`),
   CONSTRAINT `content_type_id_refs_id_288599e6` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `user_id_refs_id_c8665aa` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of django_admin_log
@@ -676,7 +676,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `app_label` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of django_content_type
@@ -715,7 +715,7 @@ CREATE TABLE `django_session` (
   `expire_date` datetime NOT NULL,
   PRIMARY KEY (`session_key`),
   KEY `django_session_c25c2c28` (`expire_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of django_session
@@ -750,7 +750,7 @@ CREATE TABLE `django_site` (
   `domain` varchar(100) NOT NULL,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of django_site
@@ -769,7 +769,7 @@ CREATE TABLE `grade` (
   PRIMARY KEY (`id`),
   KEY `grade_42ff452e` (`student_id`),
   CONSTRAINT `student_id_refs_id_696aeb74468fbd7` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of grade
@@ -809,7 +809,7 @@ CREATE TABLE `south_migrationhistory` (
   `migration` varchar(255) NOT NULL,
   `applied` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of south_migrationhistory
@@ -836,7 +836,7 @@ CREATE TABLE `student` (
   KEY `student_c48b39e9` (`theclass_id`),
   CONSTRAINT `theclass_id_refs_id_660c1d0a704564aa` FOREIGN KEY (`theclass_id`) REFERENCES `class` (`id`),
   CONSTRAINT `user_id_refs_id_32dd460521947d82` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of student

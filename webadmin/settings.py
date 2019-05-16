@@ -16,10 +16,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        # 'ENGINE': 'mysql',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'comperformance',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'password',                  # Not used with sqlite3.
+        'USER': 'comperformance',                      # Not used with sqlite3.
+        'PASSWORD': 'comperformance',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -180,7 +181,7 @@ LOGGING = {
         'custom_log_file': {
             'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(PROJECT_DIR, 'logs/django.log'),  # you need define your VAR_ROOT variable that points to your project path,and mkdir a logs directory in your project root path.
+            'filename': os.path.join(PROJECT_DIR, 'logs', 'django.log'),  # you need define your VAR_ROOT variable that points to your project path,and mkdir a logs directory in your project root path.
             'backupCount': 5,
             'maxBytes': '16777216',  # 16megabytes(16M)
             'formatter': 'verbose'
@@ -188,7 +189,7 @@ LOGGING = {
         'django_request_logfile': {
             'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(PROJECT_DIR, 'logs/django_request_logfile.log'),  # you need define your VAR_ROOT variable that points to your project path,and mkdir a logs directory in your project root path.
+            'filename': os.path.join(PROJECT_DIR, 'logs', 'django_request_logfile.log'),  # you need define your VAR_ROOT variable that points to your project path,and mkdir a logs directory in your project root path.
             'backupCount': 5,
             'maxBytes': '16777216',  # 16megabytes(16M)
             'formatter': 'django_request'
@@ -196,7 +197,7 @@ LOGGING = {
         'django_db_backends_logfile': {
             'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(PROJECT_DIR, 'logs/django_db_backends_logfile.log'),  # you need define your VAR_ROOT variable that points to your project path,and mkdir a logs directory in your project root path.
+            'filename': os.path.join(PROJECT_DIR, 'logs', 'django_db_backends_logfile.log'),  # you need define your VAR_ROOT variable that points to your project path,and mkdir a logs directory in your project root path.
             'backupCount': 5,
             'maxBytes': '16777216',  # 16megabytes(16M)
             'formatter': 'django_db_backends'
